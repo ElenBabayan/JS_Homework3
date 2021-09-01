@@ -1,4 +1,18 @@
 // Problem1
+
+function solution2(arr) {
+    let res = [];
+    for(let i = 0; i < arr.length; i++) {
+        if(Array.isArray(arr[i])) {
+            res = res.concat( solution2(arr[i]) );
+        }
+        else {
+            res.push(arr[i]);
+        }
+        return res;
+    }
+}
+
 function flattenNestedArrays2(arr) {
 
     return arr.reduce(function (arr1, arr2) {
